@@ -1,19 +1,28 @@
 import { Canvas } from "@react-three/fiber";
 import Model from "./roullete";
 import { Html, OrbitControls } from "@react-three/drei";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Modal from "react-modal";
 
 function App() {
   const [T, sT] = useState();
   const [R, sR] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [Q, sQ] = useState();
+  useEffect(()=>{
+    console.log(Q)
+  },[Q])
   return (
     <>
-      <Modall modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen} sR={sR} title={T} />
+      <Modall Q={Q} modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen} sR={sR} title={T} />
       <Canvas shadows>
         <Html position={[0, 2.4, 1]} transform occlude>
           <p>당첨 안되는건 모두 기분탓인 룰렛 돌리기</p>
+        </Html>
+        <Html position={[-3.4, 0, 1]} transform occlude>
+          <p style={{fontSize:'13px', color:'orange',fontWeight:'bold'}}>주황색 뜨면 키보드 당첨</p>
+          <p style={{fontSize:'10px', color:'white'}}>하얀색 뜨면 간식 당첨</p>
+          <p style={{fontSize:'10px', color:'blue'}}>파란색 뜨면 스티커 당첨</p>
         </Html>
         <ambientLight intensity={1} />
         <color attach={"background"} args={["skyblue"]} />
@@ -23,7 +32,7 @@ function App() {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Model R={R} sR={sR} setModalIsOpen={setModalIsOpen} setT={sT} />
+        <Model sQ={sQ} Q={Q} R={R} sR={sR} setModalIsOpen={setModalIsOpen} setT={sT} />
         <directionalLight
           shadow-mapSize={4096}
           castShadow
@@ -39,7 +48,7 @@ function App() {
   );
 }
 
-function Modall({ title, sR, modalIsOpen, setModalIsOpen }) {
+function Modall({ title, sR, modalIsOpen, setModalIsOpen,Q }) {
   const showAnswer = () => {
     setModalIsOpen(!modalIsOpen);
   };
@@ -71,6 +80,7 @@ function Modall({ title, sR, modalIsOpen, setModalIsOpen }) {
       }}
     >
       <h2>{title}당첨!</h2>
+      <img style={{width:'300px'}} src={Q==3? '/2.png':'/1.png'}></img>
     </Modal>
   );
 }

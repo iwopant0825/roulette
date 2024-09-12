@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Html, useGLTF } from "@react-three/drei";
 import { useSpring, animated } from "@react-spring/three";
 
-export default function Model({ setModalIsOpen, setT, R, sR }) {
+export default function Model({ setModalIsOpen, setT, R, sR ,sQ}) {
   const { nodes, materials } = useGLTF("/roullete.glb");
   const jj = useGLTF("/jj.glb");
   const [rotationY, setRotationY] = useState(0);
@@ -11,6 +11,7 @@ export default function Model({ setModalIsOpen, setT, R, sR }) {
   const [result, setResult] = useState(null); // 새로운 상태 변수 생성
   const [jc, setjc] = useState(0); // 새로운 상태 변수 생성
   const [RRRR, sRRRR] = useState(true); // 새로운 상태 변수 생성
+  const [SSS,SSSS] = useState(true)
   const { rotation } = useSpring({
     rotation: [Math.PI / 2, rotationY, 0],
     config: { tension: 170, friction: 150 }, // 부드럽게 천천히 멈추도록 설정
@@ -34,6 +35,7 @@ export default function Model({ setModalIsOpen, setT, R, sR }) {
     }
   }, [R, sR]);
   const handleClick = () => {
+    SSSS(false)
     sRRRR(true);
     setRotationY(rotationY - rotationAmount); // 설정된 각도만큼 반대 방향으로 회전
 
@@ -42,10 +44,13 @@ export default function Model({ setModalIsOpen, setT, R, sR }) {
 
     if (randomValue < 0.5) {
       setResult(1); // 50% 확률
-    } else if (randomValue < 0.95) {
-      setResult(2); // 45% 확률
+      sQ(1);
+    } else if (randomValue < 0.99) {
+      setResult(2); // 49% 확률
+      sQ(2);
     } else {
-      setResult(3); // 5% 확률
+      setResult(3); // 1% 확률
+      sQ(3);
     }
   };
   useEffect(() => {
@@ -64,6 +69,7 @@ export default function Model({ setModalIsOpen, setT, R, sR }) {
               setjc(0);
               setT("간식");
               setModalIsOpen(true);
+              SSSS(true)
             }, 400);
           }, 800);
         } else if (result === 2) {
@@ -78,6 +84,21 @@ export default function Model({ setModalIsOpen, setT, R, sR }) {
               setjc(0);
               setT("스티커");
               setModalIsOpen(true);
+              SSSS(true)
+            }, 700);
+          }, 800);
+        }else if (result === 3) {
+          setjc(0);
+          setTimeout(() => {
+            setjc(0);
+          }, 700);
+          setTimeout(() => {
+            setResult(3);
+            setTimeout(() => {
+              setjc(0);
+              setT("키보드!!!!!");
+              setModalIsOpen(true);
+              SSSS(true)
             }, 700);
           }, 800);
         }
@@ -100,7 +121,7 @@ export default function Model({ setModalIsOpen, setT, R, sR }) {
         />
       </animated.group>
 
-      <group scale={3} dispose={null} onClick={handleClick}>
+      <group scale={3} dispose={null} onClick={SSS? handleClick:null}>
         <group position={[0, -0.5, 0.024]}>
           <group position={[0, 0.703, 0.2]} rotation={[Math.PI / 2, 0, 0]}>
             <mesh
