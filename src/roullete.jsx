@@ -64,7 +64,7 @@ export default function Model({ setModalIsOpen, setT, R, sR ,sQ}) {
           }, 700);
           setTimeout(() => {
             setRotationY(rotationY - 0.6);
-            setResult(3);
+            // setResult(3);
             setTimeout(() => {
               setjc(0);
               setT("간식");
@@ -79,7 +79,7 @@ export default function Model({ setModalIsOpen, setT, R, sR ,sQ}) {
           }, 700);
           setTimeout(() => {
             setRotationY(rotationY + 0.3);
-            setResult(3);
+            // setResult(3);
             setTimeout(() => {
               setjc(0);
               setT("스티커");
@@ -93,7 +93,7 @@ export default function Model({ setModalIsOpen, setT, R, sR ,sQ}) {
             setjc(0);
           }, 700);
           setTimeout(() => {
-            setResult(3);
+            // setResult(3);
             setTimeout(() => {
               setjc(0);
               setT("키보드!!!!!");

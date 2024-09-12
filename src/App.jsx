@@ -9,9 +9,6 @@ function App() {
   const [R, sR] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [Q, sQ] = useState();
-  useEffect(()=>{
-    console.log(Q)
-  },[Q])
   return (
     <>
       <Modall Q={Q} modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen} sR={sR} title={T} />
