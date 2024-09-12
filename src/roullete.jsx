@@ -67,7 +67,7 @@ export default function Model({ setModalIsOpen, setT, R, sR ,sQ}) {
             // setResult(3);
             setTimeout(() => {
               setjc(0);
-              setT("간식");
+              setT("마이쮸");
               setModalIsOpen(true);
               SSSS(true)
             }, 400);
@@ -82,7 +82,7 @@ export default function Model({ setModalIsOpen, setT, R, sR ,sQ}) {
             // setResult(3);
             setTimeout(() => {
               setjc(0);
-              setT("스티커");
+              setT("피크닉");
               setModalIsOpen(true);
               SSSS(true)
             }, 700);

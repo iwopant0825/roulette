@@ -18,8 +18,8 @@ function App() {
         </Html>
         <Html position={[-3.4, 0, 1]} transform occlude>
           <p style={{fontSize:'13px', color:'orange',fontWeight:'bold'}}>주황색 뜨면 키보드 당첨</p>
-          <p style={{fontSize:'10px', color:'white'}}>하얀색 뜨면 간식 당첨</p>
-          <p style={{fontSize:'10px', color:'blue'}}>파란색 뜨면 스티커 당첨</p>
+          <p style={{fontSize:'10px', color:'white'}}>하얀색 뜨면 마이쮸 당첨</p>
+          <p style={{fontSize:'10px', color:'blue'}}>파란색 뜨면 피크닉 당첨</p>
         </Html>
         <ambientLight intensity={1} />
         <color attach={"background"} args={["skyblue"]} />
