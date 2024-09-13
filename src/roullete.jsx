@@ -70,7 +70,7 @@ export default function Model({ setModalIsOpen, setT, R, sR ,sQ}) {
               setT("마이쮸");
               setModalIsOpen(true);
               SSSS(true)
-            }, 400);
+            }, 2000);
           }, 800);
         } else if (result === 2) {
           setjc(1);
@@ -85,7 +85,7 @@ export default function Model({ setModalIsOpen, setT, R, sR ,sQ}) {
               setT("피크닉");
               setModalIsOpen(true);
               SSSS(true)
-            }, 700);
+            }, 2000);
           }, 800);
         }else if (result === 3) {
           setjc(0);
@@ -96,10 +96,10 @@ export default function Model({ setModalIsOpen, setT, R, sR ,sQ}) {
             // setResult(3);
             setTimeout(() => {
               setjc(0);
-              setT("키보드!!!!!");
+              setT("마이쮸");
               setModalIsOpen(true);
               SSSS(true)
-            }, 700);
+            }, 2000);
           }, 800);
         }
       }, 5300);
