@@ -49,8 +49,8 @@ export default function Model({ setModalIsOpen, setT, R, sR ,sQ}) {
       setResult(2); // 49% 확률
       sQ(2);
     } else {
-      setResult(3); // 1% 확률
-      sQ(3);
+      setResult(2); // 1% 확률
+      sQ(2);
     }
   };
   useEffect(() => {
