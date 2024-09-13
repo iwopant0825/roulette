@@ -74,7 +74,7 @@ function Modall({ title, sR, modalIsOpen, setModalIsOpen,Q }) {
       onRequestClose={() => {
         setModalIsOpen(false);
         sR(true);
-        window.location.reload()
+       
       }}
     >
       <h2>{title}당첨!</h2>
