@@ -28,7 +28,7 @@ export default function Model({ setModalIsOpen, setT, R, sR ,sQ}) {
     config: { tension: 300, friction: 20 },
   });
   useEffect(() => {
-    if (R === true) {
+    if (R == true) {
       setRotationY(0);
       sRRRR(false);
       sR(false); // 상태를 다시 false로 설정하여 리셋이 반복되도록 함
@@ -82,7 +82,7 @@ export default function Model({ setModalIsOpen, setT, R, sR ,sQ}) {
             // setResult(3);
             setTimeout(() => {
               setjc(0);
-              setT("피크닉");
+              setT("스티커");
               setModalIsOpen(true);
               SSSS(true)
             }, 700);
@@ -105,7 +105,7 @@ export default function Model({ setModalIsOpen, setT, R, sR ,sQ}) {
       }, 5300);
       return () => clearTimeout(timer);
     }
-  }, [result, rotationY]);
+  }, [result]);
   return (
     <>
       <animated.group
